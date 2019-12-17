@@ -10,7 +10,7 @@ var numbersGuessed = [];
 var found = false;
 var wins = 0;
 var losses = 0;
-var guesses = 3;
+var guesses = 2;
 
 let rando = Math.floor(Math.random() * computerLetters.length);
 console.log(rando);
@@ -25,7 +25,7 @@ function print() {
 }
 
 function reset() {
-    guesses = 3;
+    guesses = 2;
     computerSelection = computerLetters[Math.floor(Math.random() * computerLetters.length)];
     numbersGuessed = [];
     console.log(rando);
