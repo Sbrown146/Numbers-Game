@@ -9,8 +9,8 @@ console.log(computerLetters);
 var numbersGuessed = [];
 var found = false;
 var wins = 0;
-var looses = 0;
-var guesses = 2;
+var losses = 0;
+var guesses = 3;
 
 let rando = Math.floor(Math.random() * computerLetters.length);
 console.log(rando);
@@ -19,13 +19,13 @@ var computerSelection = computerLetters[rando];
 
 function print() {
     document.getElementById("line-1").innerHTML = "Wins: " + wins;
-    document.getElementById("line-2").innerHTML = "Looses: " + looses;
+    document.getElementById("line-2").innerHTML = "Losses: " + losses;
     document.getElementById("line-3").innerHTML = "Guess Left: " + guesses;
     document.getElementById("line-4").innerHTML = "Numbers Guessed: " + numbersGuessed;
 }
 
 function reset() {
-    guesses = 2;
+    guesses = 3;
     computerSelection = computerLetters[Math.floor(Math.random() * computerLetters.length)];
     numbersGuessed = [];
     console.log(rando);
@@ -63,7 +63,7 @@ document.onkeyup = function (event) {
 
                 } else if (guesses === 0) {
                     alert("Your Guesses Are Incorrect.  The Correct Number was " + computerSelection);
-                    looses = looses + 1;
+                    losses = losses + 1;
                     reset();
                 }
             }
